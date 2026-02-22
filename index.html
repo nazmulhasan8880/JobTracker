@@ -33,6 +33,29 @@
 
 </div>
 
+<!-- ================= AVAILABLE JOBS ================= -->
+<div class="bg-white p-6 rounded-xl shadow">
+
+<div class="flex justify-between items-center mb-4">
+<h2 class="text-xl font-semibold">Available Jobs</h2>
+<p class="text-gray-500">Jobs: <span id="tabCount">8</span></p>
+</div>
+
+<!-- Tabs -->
+<div class="flex gap-4 mb-6">
+<button onclick="filterJobs('all')" class="tabBtn bg-blue-500 text-white px-4 py-1 rounded">All</button>
+<button onclick="filterJobs('interview')" class="tabBtn bg-gray-200 px-4 py-1 rounded">Interview</button>
+<button onclick="filterJobs('rejected')" class="tabBtn bg-gray-200 px-4 py-1 rounded">Rejected</button>
+</div>
+
+<!-- No Jobs Message -->
+<div id="noJobs" class="hidden text-center py-10">
+<div class="text-6xl mb-4"><img src="images/jobs.png" alt=""></div>
+<h3 class="text-lg font-semibold">No Jobs Available</h3>
+<p class="text-gray-500 text-sm">There are no jobs in this category yet.</p>
+</div>
+
+
     
 </body>
 </html>
