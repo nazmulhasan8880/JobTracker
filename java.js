@@ -18,6 +18,8 @@ function updateStatus(btn, status) {
 const card = btn.closest('.jobCard');
 const tag = card.querySelector('.statusTag');
 
+
+
 if(card.dataset.status === status){
 card.dataset.status = "all";
 tag.innerText = "NOT APPLIED";
@@ -62,4 +64,41 @@ document.getElementById("tabCount").innerText = visible;
 document.getElementById("noJobs").classList.toggle("hidden", visible !== 0);
 }
 
-updateCounts();
+
+///h
+
+function filterJobs(type){
+
+const cards = document.querySelectorAll('.jobCard');
+const buttons = document.querySelectorAll('.tabBtn');
+let visible = 0;
+
+
+buttons.forEach(btn => {
+btn.classList.remove("bg-blue-500", "text-white");
+btn.classList.add("bg-gray-200", "text-black");
+
+if(btn.innerText.toLowerCase() === type){
+btn.classList.remove("bg-gray-200", "text-black");
+btn.classList.add("bg-blue-500", "text-white");
+}
+});
+
+
+cards.forEach(card => {
+if(type === "all"){
+card.style.display = "block";
+visible++;
+}
+else if(card.dataset.status === type){
+card.style.display = "block";
+visible++;
+}
+else{
+card.style.display = "none";
+}
+});
+
+document.getElementById("tabCount").innerText = visible;
+document.getElementById("noJobs").classList.toggle("hidden", visible !== 0);
+}
