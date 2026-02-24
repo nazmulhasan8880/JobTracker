@@ -65,7 +65,7 @@ document.getElementById("noJobs").classList.toggle("hidden", visible !== 0);
 }
 
 
-///h
+
 
 function filterJobs(type){
 
